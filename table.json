@@ -1,0 +1,54 @@
+{
+  "pm25": {
+    "good": {
+      "conc": { "low": 0.0, "high": 12.0 },
+      "aqi": { "low": 0, "high": 50 }
+    },
+    "moderate": {
+      "conc": { "low": 12.1, "high": 35.4 },
+      "aqi": { "low": 51, "high": 100 }
+    },
+    "unhealthy_for_sensitive_groups": {
+      "conc": { "low": 35.5, "high": 55.4 },
+      "aqi": { "low": 101, "high": 150 }
+    },
+    "unhealthy": {
+      "conc": { "low": 55.5, "high": 150.4 },
+      "aqi": { "low": 151, "high": 200 }
+    },
+    "very_unhealthy": {
+      "conc": { "low": 150.5, "high": 250.4 },
+      "aqi": { "low": 201, "high": 300 }
+    },
+    "hazardous": {
+      "conc": { "low": 250.5, "high": 500.4 },
+      "aqi": { "low": 301, "high": 500 }
+    }
+  },
+  "pm10": {
+    "good": {
+      "conc": { "low": 0, "high": 54 },
+      "aqi": { "low": 0, "high": 50 }
+    },
+    "moderate": {
+      "conc": { "low": 55, "high": 154 },
+      "aqi": { "low": 51, "high": 100 }
+    },
+    "unhealthy_for_sensitive_groups": {
+      "conc": { "low": 155, "high": 254 },
+      "aqi": { "low": 101, "high": 150 }
+    },
+    "unhealthy": {
+      "conc": { "low": 255, "high": 354 },
+      "aqi": { "low": 151, "high": 200 }
+    },
+    "very_unhealthy": {
+      "conc": { "low": 355, "high": 424 },
+      "aqi": { "low": 201, "high": 300 }
+    },
+    "hazardous": {
+      "conc": { "low": 425, "high": 604 },
+      "aqi": { "low": 301, "high": 500 }
+    }
+  }
+}

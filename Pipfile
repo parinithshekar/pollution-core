@@ -5,9 +5,15 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+flake8 = "*"
+pep8-naming = "*"
+yapf = "*"
 
 [packages]
 firebase-admin = "*"
+numpy = "*"
+pandas = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.8"
