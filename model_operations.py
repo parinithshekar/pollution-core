@@ -24,6 +24,7 @@ class ModelOperations:
         now_minus_15 = now - timedelta(minutes=time_window)
         now_minus_30 = now - timedelta(minutes=2 * time_window)
         now_minus_45 = now - timedelta(minutes=3 * time_window)
+        now_minus_60 = now - timedelta(minutes=4 * time_window)
 
         for entry in entries:
             # entry is of the form (key, {time, value})
@@ -42,8 +43,10 @@ class ModelOperations:
                 timeshift_2.append(entry_value)
             elif (entry_time > now_minus_45):
                 timeshift_3.append(entry_value)
-            else:
+            elif (entry_time > now_minus_60):
                 timeshift_4.append(entry_value)
+            else:
+                continue
 
         # Obtain mean of each bucket
         mean_ts1 = sum(timeshift_1) / len(timeshift_1)

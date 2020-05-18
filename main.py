@@ -18,10 +18,15 @@ cred = credentials.Certificate("./serviceAccountKey.json")
 firebase_admin.initialize_app(
     cred, {'databaseURL': 'https://pollution-pkdoesml.firebaseio.com'})
 
-# Time threshold to save old entries (in minutes)
+# Time threshold to consider old entries (in minutes)
 # Recommended: 60 minutes
-past_time_limit = 4
-predicted_time_limit = 4
+past_time_limit = 60
+predicted_time_limit = 60
+
+# Time threshold for storing old entries in firebase
+# Controls how many entris are shown in the graph in pollution-monitor
+firebase_store_past_time_limit = 60 * 7
+firebase_store_predicted_time_limit = 60 * 7
 
 
 # Updates realtime storage on firebase
@@ -113,7 +118,7 @@ if __name__ == "__main__":
 
         # Write currently read values to firebase
         update_firebase('/past', past_to_update, past_values, now,
-                        past_time_limit)
+                        firebase_store_past_time_limit)
         """ SENSOR DATA WRITE TO FIREBASE DONE """
 
         # Get past data
@@ -136,9 +141,9 @@ if __name__ == "__main__":
 
         # Write predicted values to firebase
         update_firebase('/predicted', predicted_to_update, predicted_values,
-                        now_plus_15, predicted_time_limit)
+                        now_plus_15, firebase_store_predicted_time_limit)
         """ PREDICTED DATA WRITE TO FIREBASE DONE """
 
         # Delay for some time before next sensor reading
         print("💤 ***DELAYING***\n")
-        time.sleep(10)
+        time.sleep(15*60)
